@@ -1,5 +1,5 @@
 {
-  "name": "react-portfolio",
+  "name": "react_portfolio",
   "version": "1.0.0",
   "description": "A personal portfolio built with React and Tailwind CSS.",
   "main": "src/main.jsx",
