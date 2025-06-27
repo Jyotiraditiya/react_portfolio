@@ -1,44 +1,25 @@
-import React from "react";
-
 const projects = [
-  {
-    name: "SPMOS - Smart Parking Management",
-    description: "Role-based access control, slot optimization using Dijkstra’s algorithm.",
-    link: "#"
-  },
-  {
-    name: "EventPlanner AI",
-    description: "Built with Next.js, Tailwind & MongoDB. AI suggests venues, tasks, and themes.",
-    link: "#"
-  },
-  {
-    name: "Netflix Clone",
-    description: "Full-stack UI clone in progress, features video streaming and user auth.",
-    link: "#"
-  },
-  {
-    name: "Responsive Landing Page",
-    description: "Mobile-first design with cross-browser compatibility for all screen sizes.",
-    link: "#"
-  },
+  { title: 'Netflix Clone', desc: 'React, TMDB, Firebase', img: '/netflix.jpg' },
+  { title: 'EventAI Planner', desc: 'Next.js, OpenAI, MongoDB', img: '/event.jpg' },
+  { title: 'Smart Parking', desc: 'React, Node.js, Maps', img: '/parking.jpg' },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="p-8 bg-gray-50 rounded shadow my-8 max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((proj, index) => (
-          <a
-            key={index}
-            href={proj.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-4 border rounded bg-white shadow hover:shadow-lg hover:border-blue-600 transition"
+    <section id="projects" className="py-20">
+      <h2 className="text-3xl font-bold mb-8">Projects</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map(p => (
+          <div
+            key={p.title}
+            className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transform transition"
           >
-            <h3 className="text-xl font-semibold mb-2">{proj.name}</h3>
-            <p>{proj.description}</p>
-          </a>
+            <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold">{p.title}</h3>
+              <p className="text-gray-400">{p.desc}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
